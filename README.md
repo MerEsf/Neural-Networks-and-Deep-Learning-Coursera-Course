@@ -4,6 +4,10 @@ Neural Networks and Deep Learning Course on Coursera, part of Deep Learning Spec
 ## Planar data classification with a hidden layer
 The data looks like a "flower" with some red (label y=0) and some blue (y=1) points. The goal is to build a model to fit this data.
 
+
+![alt text](https://github.com/MerEsf/Neural-Networks-and-Deep-Learning-Coursera-Course/blob/master/Photos/Planar.png)
+
+
 ### Approach:
 2-class (binary) classification neural network with a single hidden layer
 ### Learning outcomes:
