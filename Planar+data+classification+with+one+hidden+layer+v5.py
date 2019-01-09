@@ -23,14 +23,10 @@ np.random.seed(1) # set a seed so that the results are consistent
 
 X, Y = load_planar_dataset()
 
-
-# The data looks like a "flower" with some red (label y=0) and some blue (y=1) points. The goal is to build a model to fit this data. 
-
 # Visualize the data:
 plt.scatter(X[0, :], X[1, :], c=Y, s=40, cmap=plt.cm.Spectral);
 
-
-# You have:
+# We have:
 #     - a numpy-array (matrix) X that contains the features (x1, x2)
 #     - a numpy-array (vector) Y that contains the labels (red:0, blue:1).
 
@@ -59,11 +55,9 @@ LR_predictions = clf.predict(X.T)
 print ('Accuracy of logistic regression: %d ' % float((np.dot(Y,LR_predictions) + np.dot(1-Y,1-LR_predictions))/float(Y.size)*100) +
        '% ' + "(percentage of correctly labelled datapoints)")
 
-# **Interpretation**: The dataset is not linearly separable, so logistic regression doesn't perform well. 
-
 # ## 4 - Neural Network model
 # 
-# Because Logistic regression did not work well on the "flower dataset", to train a Neural Network with a single hidden layer.
+# train a Neural Network with a single hidden layer.
 #
 # # ### 4.1 - Defining the neural network structure ####
 # 
@@ -111,7 +105,7 @@ def initialize_parameters(n_x, n_h, n_y):
     n_y -- size of the output layer
     
     Returns:
-    params -- python dictionary containing your parameters:
+    params -- python dictionary containing the parameters:
                     W1 -- weight matrix of shape (n_h, n_x)
                     b1 -- bias vector of shape (n_h, 1)
                     W2 -- weight matrix of shape (n_y, n_h)
@@ -146,9 +140,7 @@ print("b1 = " + str(parameters["b1"]))
 print("W2 = " + str(parameters["W2"]))
 print("b2 = " + str(parameters["b2"]))
 
-
 # ### 4.3 - The Loop ####
-
 
 # GRADED FUNCTION: forward_propagation
 
@@ -156,7 +148,7 @@ def forward_propagation(X, parameters):
     """
     Argument:
     X -- input data of size (n_x, m)
-    parameters -- python dictionary containing your parameters (output of initialization function)
+    parameters -- python dictionary containing the parameters (output of initialization function)
     
     Returns:
     A2 -- The sigmoid output of the second activation
@@ -200,12 +192,11 @@ print(np.mean(cache['Z1']) ,np.mean(cache['A1']),np.mean(cache['Z2']),np.mean(ca
 
 def compute_cost(A2, Y, parameters):
     """
-    Computes the cross-entropy cost given in equation (13)
-    
+       
     Arguments:
     A2 -- The sigmoid output of the second activation, of shape (1, number of examples)
     Y -- "true" labels vector of shape (1, number of examples)
-    parameters -- python dictionary containing your parameters W1, b1, W2 and b2
+    parameters -- python dictionary containing the parameters W1, b1, W2 and b2
     
     Returns:
     cost -- cross-entropy cost given equation (13)
@@ -217,8 +208,7 @@ def compute_cost(A2, Y, parameters):
    
     logprobs = np.multiply(np.log(A2),Y) + np.multiply(np.log(1 - A2),(1-Y))
     cost = - 1/m * np.sum(logprobs)
-   
-    
+       
     cost = np.squeeze(cost)     # makes sure cost is the dimension we expect. 
                                 
     assert(isinstance(cost, float))
@@ -229,7 +219,6 @@ def compute_cost(A2, Y, parameters):
 A2, Y_assess, parameters = compute_cost_test_case()
 
 print("cost = " + str(compute_cost(A2, Y_assess, parameters)))
-
 # 
 # Implement the function `backward_propagation()`.
 # 
@@ -240,13 +229,13 @@ def backward_propagation(parameters, cache, X, Y):
     Implement the backward propagation using the instructions above.
     
     Arguments:
-    parameters -- python dictionary containing our parameters 
+    parameters -- python dictionary containing the parameters 
     cache -- a dictionary containing "Z1", "A1", "Z2" and "A2".
     X -- input data of shape (2, number of examples)
     Y -- "true" labels vector of shape (1, number of examples)
     
     Returns:
-    grads -- python dictionary containing your gradients with respect to different parameters
+    grads -- python dictionary containing the gradients with respect to different parameters
     """
     m = X.shape[1]
     
@@ -296,11 +285,11 @@ def update_parameters(parameters, grads, learning_rate = 1.2):
     Updates parameters using the gradient descent update rule given above
     
     Arguments:
-    parameters -- python dictionary containing your parameters 
-    grads -- python dictionary containing your gradients 
+    parameters -- python dictionary containing the parameters 
+    grads -- python dictionary containing the gradients 
     
     Returns:
-    parameters -- python dictionary containing your updated parameters 
+    parameters -- python dictionary containing the updated parameters 
     """
     # Retrieve each parameter from the dictionary "parameters"
     
@@ -343,7 +332,7 @@ print("b2 = " + str(parameters["b2"]))
 
 # ### 4.4 - Integrate parts 4.1, 4.2 and 4.3 in nn_model() ####
 # 
-# Build your neural network model in `nn_model()`.
+# Build the neural network model in `nn_model()`.
 
 # GRADED FUNCTION: nn_model
 
@@ -406,7 +395,6 @@ print("b2 = " + str(parameters["b2"]))
 
 # ### 4.5 Predictions
 # 
-# Use your model to predict by building predict().
 # Use forward propagation to predict results.
 # 
 # GRADED FUNCTION: predict
@@ -416,11 +404,11 @@ def predict(parameters, X):
     Using the learned parameters, predicts a class for each example in X
     
     Arguments:
-    parameters -- python dictionary containing your parameters 
+    parameters -- python dictionary containing the parameters 
     X -- input data of size (n_x, m)
     
     Returns
-    predictions -- vector of predictions of our model (red: 0 / blue: 1)
+    predictions -- vector of predictions of the model (red: 0 / blue: 1)
     """
     
     # Computes probabilities using forward propagation, and classifies to 0/1 using 0.5 as the threshold.
@@ -448,9 +436,8 @@ plt.title("Decision Boundary for hidden layer size " + str(4))
 predictions = predict(parameters, X)
 print ('Accuracy: %d' % float((np.dot(Y,predictions.T) + np.dot(1-Y,1-predictions.T))/float(Y.size)*100) + '%')
 
-# Accuracy is high compared to Logistic Regression. The model has learnt the leaf patterns of the flower! 
-# 
-# Now, let's try out several hidden layer sizes.
+
+# try out several hidden layer sizes.
 
 # ### 4.6 - Tuning hidden layer size 
 
@@ -464,12 +451,6 @@ for i, n_h in enumerate(hidden_layer_sizes):
     predictions = predict(parameters, X)
     accuracy = float((np.dot(Y,predictions.T) + np.dot(1-Y,1-predictions.T))/float(Y.size)*100)
     print ("Accuracy for {} hidden units: {} %".format(n_h, accuracy))
-
-
-# **Interpretation**:
-# - The larger models (with more hidden units) are able to fit the training set better, until eventually the largest models overfit the data. 
-# - The best hidden layer size seems to be around n_h = 5. Indeed, a value around here seems to  fits the data well without also incurring noticable overfitting.
-# - You will also learn later about regularization, which lets you use very large models (such as n_h = 50) without much overfitting. 
 
 # ## 5) Performance on other datasets
 
@@ -495,6 +476,4 @@ if dataset == "blobs":
 # Visualize the data
 plt.scatter(X[0, :], X[1, :], c=Y, s=40, cmap=plt.cm.Spectral);
 
-# Reference:
-# - http://scs.ryerson.ca/~aharley/neural-networks/
-# - http://cs231n.github.io/neural-networks-case-study/
+
