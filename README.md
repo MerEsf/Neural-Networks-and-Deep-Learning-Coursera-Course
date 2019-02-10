@@ -18,7 +18,7 @@ The data looks like a "flower" with some red (label y=0) and some blue (y=1) poi
 ![alt text](https://github.com/MerEsf/Neural_Networks_Deep_Learning/blob/master/Photos/result%20planar%205.png)
 
 ### Learning outcomes:
--	Accuracy of the neural network ( around 90%) is high compared to Logistic Regression (47%) (as the dataset is not linearly separable). So the model has learnt the leaf patterns of the flower!
+-	Accuracy of the neural network ( around 90%) is high compared to Logistic Regression (47%) (as the dataset is not linearly separable). So the model has learned the leaf patterns of the flower.
 - The larger models (with more hidden units) are able to fit the training set better, until eventually the largest models overfit the data. 
 - The best hidden layer size seems to be around n_h = 5. Indeed, a value around here seems to  fits the data well without also incurring noticeable overfitting.
 #### Reference:
