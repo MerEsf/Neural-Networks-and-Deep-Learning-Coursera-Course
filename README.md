@@ -1,6 +1,8 @@
-# Neural Networks and Deep Learning Coursera Course
-Neural Networks and Deep Learning Course on Coursera, part of Deep Learning Specialization offered by Deeplearning.ai
+# Multi-class Image Classification
+## SIGNS Dataset
 
+
+# Binary Image Classification
 ## 1) Planar data classification with a hidden layer
 The data looks like a "flower" with some red (label y=0) and some blue (y=1) points. The goal is to build a model to fit this data.
 
