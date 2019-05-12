@@ -4,7 +4,10 @@
 ![alt text](https://github.com/MerEsf/Neural_Networks_Deep_Learning/blob/master/Photos/hands.png)
 
 ### Approach:
+One Hot Encodings, SoftMax Function, Xavier Initialization for weights and Zero Initialization for biases
 
+### Results:
+![alt text](https://github.com/MerEsf/Neural_Networks_Deep_Learning/blob/master/Photos/download.png)
 
 # Binary Image Classification
 ## 1) Planar data classification
