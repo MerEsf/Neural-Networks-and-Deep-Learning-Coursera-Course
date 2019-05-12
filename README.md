@@ -1,7 +1,10 @@
-# Multi-class Image Classification
+# Multi-class Image Classification (TensorFlow)
 ## SIGNS Dataset
 
 ![alt text](https://github.com/MerEsf/Neural_Networks_Deep_Learning/blob/master/Photos/hands.png)
+
+### Approach:
+
 
 # Binary Image Classification
 ## 1) Planar data classification
