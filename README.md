@@ -1,6 +1,7 @@
 # Multi-class Image Classification
 ## SIGNS Dataset
 
+![alt text](https://github.com/MerEsf/Neural_Networks_Deep_Learning/blob/master/Photos/hands.png)
 
 # Binary Image Classification
 ## 1) Planar data classification
