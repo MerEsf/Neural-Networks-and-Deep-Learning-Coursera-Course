@@ -3,7 +3,7 @@
 
 
 # Binary Image Classification
-## 1) Planar data classification with a hidden layer
+## 1) Planar data classification
 The data looks like a "flower" with some red (label y=0) and some blue (y=1) points. The goal is to build a model to fit this data.
 
 
@@ -28,7 +28,7 @@ The data looks like a "flower" with some red (label y=0) and some blue (y=1) poi
 - http://cs231n.github.io/neural-networks-case-study/
 
 
-## 2) Deep Neural Network for Image Classification
+## 2) Cat vs non-Cat Classification
 Building a deep network, and applying it to cat vs non-cat classification (supervised learning)
 ### Approach:
 2-class (binary) classification neural network (2-layer and 4-layer)
