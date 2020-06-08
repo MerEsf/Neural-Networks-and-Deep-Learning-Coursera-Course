@@ -1,11 +1,3 @@
-
-# **Notation**:
-# - Superscript $[l]$ denotes a quantity associated with the $l^{th}$ layer. 
-#     - Example: $a^{[L]}$ is the $L^{th}$ layer activation. $W^{[L]}$ and $b^{[L]}$ are the $L^{th}$ layer parameters.
-# - Superscript $(i)$ denotes a quantity associated with the $i^{th}$ example. 
-#     - Example: $x^{(i)}$ is the $i^{th}$ training example.
-# - Lowerscript $i$ denotes the $i^{th}$ entry of a vector.
-#     - Example: $a^{[l]}_i$ denotes the $i^{th}$ entry of the $l^{th}$ layer's activations).
 # 
 ## ## 1 - Packages
 
@@ -25,7 +17,7 @@ get_ipython().magic('autoreload 2')
 
 np.random.seed(1)
 
-# GRADED FUNCTION: initialize_parameters
+# initialize_parameters
 
 def initialize_parameters(n_x, n_h, n_y):
     """
@@ -69,7 +61,7 @@ print("W2 = " + str(parameters["W2"]))
 print("b2 = " + str(parameters["b2"]))
 
 
-# GRADED FUNCTION: initialize_parameters_deep
+#  initialize_parameters_deep
 
 def initialize_parameters_deep(layer_dims):
     """
@@ -105,7 +97,7 @@ print("b1 = " + str(parameters["b1"]))
 print("W2 = " + str(parameters["W2"]))
 print("b2 = " + str(parameters["b2"]))
 
-# GRADED FUNCTION: linear_forward
+#  linear_forward
 
 def linear_forward(A, W, b):
     """
@@ -135,7 +127,7 @@ A, W, b = linear_forward_test_case()
 Z, linear_cache = linear_forward(A, W, b)
 print("Z = " + str(Z))
 
-# GRADED FUNCTION: linear_activation_forward
+# linear_activation_forward
 
 def linear_activation_forward(A_prev, W, b, activation):
     """
@@ -182,7 +174,7 @@ A, linear_activation_cache = linear_activation_forward(A_prev, W, b, activation 
 print("With ReLU: A = " + str(A))
 
 
-# GRADED FUNCTION: L_model_forward
+#  L_model_forward
 
 def L_model_forward(X, parameters):
     """
@@ -226,7 +218,7 @@ AL, caches = L_model_forward(X, parameters)
 print("AL = " + str(AL))
 print("Length of caches list = " + str(len(caches)))
 
-# GRADED FUNCTION: compute_cost
+# compute_cost
 
 def compute_cost(AL, Y):
     """
@@ -259,7 +251,7 @@ print("cost = " + str(compute_cost(AL, Y)))
 
 
 
-# GRADED FUNCTION: linear_backward
+# linear_backward
 
 def linear_backward(dZ, cache):
     """
@@ -297,7 +289,7 @@ print ("dA_prev = "+ str(dA_prev))
 print ("dW = " + str(dW))
 print ("db = " + str(db))
 
-# GRADED FUNCTION: linear_activation_backward
+#  linear_activation_backward
 
 def linear_activation_backward(dA, cache, activation):
     """
@@ -344,7 +336,7 @@ print ("dW = " + str(dW))
 print ("db = " + str(db))
 
 
-# GRADED FUNCTION: L_model_backward
+# L_model_backward
 
 def L_model_backward(AL, Y, caches):
     """
@@ -398,7 +390,7 @@ grads = L_model_backward(AL, Y_assess, caches)
 print_grads(grads)
 
 
-# GRADED FUNCTION: update_parameters
+#  update_parameters
 
 def update_parameters(parameters, grads, learning_rate):
     """
@@ -500,7 +492,7 @@ n_h = 7
 n_y = 1
 layers_dims = (n_x, n_h, n_y)
 
-# GRADED FUNCTION: two_layer_model
+#  two_layer_model
 
 def two_layer_model(X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 3000, print_cost=False):
     """
