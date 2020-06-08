@@ -66,7 +66,7 @@ print ('Accuracy of logistic regression: %d ' % float((np.dot(Y,LR_predictions) 
 #     - n_y: the size of the output layer
 
 
-# GRADED FUNCTION: layer_sizes
+# layer_sizes
 
 def layer_sizes(X, Y):
     """
@@ -95,7 +95,7 @@ print("The size of the output layer is: n_y = " + str(n_y))
 
 # ### 4.2 - Initialize the model's parameters ####
 # 
-# GRADED FUNCTION: initialize_parameters
+# initialize_parameters
 
 def initialize_parameters(n_x, n_h, n_y):
     """
@@ -142,7 +142,7 @@ print("b2 = " + str(parameters["b2"]))
 
 # ### 4.3 - The Loop ####
 
-# GRADED FUNCTION: forward_propagation
+# forward_propagation
 
 def forward_propagation(X, parameters):
     """
@@ -188,7 +188,7 @@ print(np.mean(cache['Z1']) ,np.mean(cache['A1']),np.mean(cache['Z2']),np.mean(ca
 
 # Implement `compute_cost()` to compute the value of the cost $J$.
 
-# GRADED FUNCTION: compute_cost
+# compute_cost
 
 def compute_cost(A2, Y, parameters):
     """
@@ -222,7 +222,7 @@ print("cost = " + str(compute_cost(A2, Y_assess, parameters)))
 # 
 # Implement the function `backward_propagation()`.
 # 
-# GRADED FUNCTION: backward_propagation
+# backward_propagation
 
 def backward_propagation(parameters, cache, X, Y):
     """
@@ -278,7 +278,7 @@ print ("dW2 = "+ str(grads["dW2"]))
 print ("db2 = "+ str(grads["db2"]))
 
 
-# GRADED FUNCTION: update_parameters
+#  update_parameters
 
 def update_parameters(parameters, grads, learning_rate = 1.2):
     """
@@ -334,7 +334,7 @@ print("b2 = " + str(parameters["b2"]))
 # 
 # Build the neural network model in `nn_model()`.
 
-# GRADED FUNCTION: nn_model
+# nn_model
 
 def nn_model(X, Y, n_h, num_iterations = 10000, print_cost=False):
     """
@@ -397,7 +397,7 @@ print("b2 = " + str(parameters["b2"]))
 # 
 # Use forward propagation to predict results.
 # 
-# GRADED FUNCTION: predict
+# predict
 
 def predict(parameters, X):
     """
